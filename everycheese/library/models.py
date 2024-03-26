@@ -24,5 +24,14 @@ class Library(TimeStampedModel):
 
     genre = models.CharField("Genre",max_length=50, choices=Genre.choices, default=Genre.UNSPECIFIED)
 
+    author_firstname = models.CharField( 
+        "Author's first name", blank=True,
+        max_length=255
+    )
+    author_lastname = models.CharField( 
+        "Author's last name", blank=True,
+        max_length=255
+    )
+
     def __str__(self):
         return self.book_name

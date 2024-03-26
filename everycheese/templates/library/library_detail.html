@@ -14,4 +14,8 @@
     <p>{{ library.description }}</p>
 {% endif %}
 
+{% if library.author_firstname %}
+    <p>Author: {{ library.author_firstname }} {{ library.author_lastname }}</p>
+{% endif %}
+
 {% endblock content %}
