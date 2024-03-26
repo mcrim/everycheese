@@ -35,3 +35,7 @@ class Library(TimeStampedModel):
 
     def __str__(self):
         return self.book_name
+    
+    def get_absolute_url(self):
+        return reverse("library:detail", kwargs={"slug": self.slug})
+    

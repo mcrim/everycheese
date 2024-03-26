@@ -7,4 +7,15 @@
         <li><a href="{% url 'library:detail' book.slug %}">{{ book.book_name }}</a></li>
     {% endfor %}
 </ul>
+
+<hr/>
+<p>Don't see a book listed here?</p> 
+<p>
+    <a class="btn btn-primary"
+    href="{% url 'library:add' %}" role="button">
+    Add Book
+    </a> 
+</p>
+
+
 {% endblock content %}

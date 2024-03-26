@@ -10,8 +10,14 @@ urlpatterns = [
         name='list' 
     ),
     path(
+        route='add/',
+        view=views.LibraryCreateView.as_view(),
+        name='add'
+    ),
+    path(
         route='<slug:slug>/',
         view=views.LibraryDetailView.as_view(),
         name='detail'
     ),
+    
 ]
