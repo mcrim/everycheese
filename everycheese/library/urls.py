@@ -15,6 +15,11 @@ urlpatterns = [
         name='add'
     ),
     path(
+        route='<slug:slug>/update/',
+        view=views.LibraryUpdateView.as_view(),
+        name='update'
+    ),
+    path(
         route='<slug:slug>/',
         view=views.LibraryDetailView.as_view(),
         name='detail'

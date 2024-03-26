@@ -5,6 +5,12 @@
 {% block content %}
 
 <h2>{{ library.book_name }}</h2>
+<p>
+    <a class="btn btn-primary"
+        href="{% url 'library:update' library.slug %}" role="button">
+        Update
+    </a> 
+</p>
 
 {% if library.genre %}
     <p>Genre: {{ library.get_genre_display }}</p>
