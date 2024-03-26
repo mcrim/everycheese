@@ -4,7 +4,7 @@
 <h2>Library's books</h2>
 <ul>
     {% for book in library_list %}
-        <li><a href="#TODO">{{ book.book_name }}</a></li>
+        <li><a href="{% url 'library:detail' book.slug %}">{{ book.book_name }}</a></li>
     {% endfor %}
 </ul>
 {% endblock content %}

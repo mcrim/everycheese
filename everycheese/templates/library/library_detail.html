@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Books: {{ library.book_name }}{% endblock title %}
+
+{% block content %}
+
+<h2>{{ library.book_name }}</h2>
+
+{% if library.genre %}
+    <p>Genre: {{ library.get_genre_display }}</p>
+{% endif %}
+
+{% if library.description %}
+    <p>{{ library.description }}</p>
+{% endif %}
+
+{% endblock content %}

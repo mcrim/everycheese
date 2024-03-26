@@ -9,4 +9,9 @@ urlpatterns = [
         view=views.LibraryListView.as_view(),
         name='list' 
     ),
+    path(
+        route='<slug:slug>/',
+        view=views.LibraryDetailView.as_view(),
+        name='detail'
+    ),
 ]

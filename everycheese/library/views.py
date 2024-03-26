@@ -5,3 +5,6 @@ from .models import Library
 
 class LibraryListView(ListView):
     model = Library
+
+class LibraryDetailView(DetailView):
+    model = Library
