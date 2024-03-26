@@ -18,4 +18,14 @@
     <p>Author: {{ library.author_firstname }} {{ library.author_lastname }}</p>
 {% endif %}
 
+<hr/>
+
+<h3>Submitted by
+    <a href="{% url 'users:detail' library.creator.username %}">
+    {{ library.creator.username }}
+    </a> 
+</h3>
+{% if library.creator.name %}
+    <p>{{ library.creator.name }}</p>
+{% endif %}
 {% endblock content %}
