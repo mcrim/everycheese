@@ -30,6 +30,12 @@ urlpatterns = [
         include('everycheese.cheeses.urls',
                 namespace='cheeses'),
     ),
+    # library
+    path( 
+        'library/',
+        include('everycheese.library.urls', 
+                namespace='library'),
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
