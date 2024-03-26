@@ -3,10 +3,12 @@ from django.shortcuts import render
 
 from django.views.generic import CreateView
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .models import Library
+from .models import Library#, Author
 
 class LibraryListView(ListView):
     model = Library
+
+
 
 class LibraryDetailView(DetailView):
     model = Library
@@ -23,7 +25,7 @@ class LibraryCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.creator = self.request.user
         return super().form_valid(form)
-
+    
 class LibraryUpdateView(LoginRequiredMixin, UpdateView):
     model = Library
     fields = [
@@ -34,3 +36,8 @@ class LibraryUpdateView(LoginRequiredMixin, UpdateView):
         'author_lastname',
     ]
     action = 'Update'
+
+'''
+class AuthorListView(ListView):
+    model = Author
+'''

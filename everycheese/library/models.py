@@ -5,6 +5,7 @@ from model_utils.models import TimeStampedModel
 from django.conf import settings
 
 # Create your models here.
+
 class Library(TimeStampedModel):
     book_name = models.CharField("Book name", max_length=255)
     slug = AutoSlugField("Book address", unique=True, always_update=False, populate_from="book_name")
@@ -24,6 +25,7 @@ class Library(TimeStampedModel):
 
     genre = models.CharField("Genre",max_length=50, choices=Genre.choices, default=Genre.UNSPECIFIED)
 
+    #author = models.ForeignKey(Author, on_delete=models.CASCADE)
     author_firstname = models.CharField( 
         "Author's first name", blank=True,
         max_length=255
@@ -32,7 +34,7 @@ class Library(TimeStampedModel):
         "Author's last name", blank=True,
         max_length=255
     )
-
+    
     creator = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         null=True,
@@ -45,3 +47,19 @@ class Library(TimeStampedModel):
     def get_absolute_url(self):
         return reverse("library:detail", kwargs={"slug": self.slug})
     
+
+'''
+class Author(models.Model):
+    id=None
+    author_firstname = models.CharField( 
+        "Author's first name", blank=True,
+        max_length=255
+    )
+    author_lastname = models.CharField( 
+        "Author's last name", blank=True,
+        max_length=255
+    )
+
+    def __str__(self):
+        return f"{self.author_firstname} {self.author_lastname}"
+'''

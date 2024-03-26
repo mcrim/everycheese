@@ -4,6 +4,7 @@ from . import views
 
 app_name = "library" 
 urlpatterns = [
+    
     path( 
         route='',
         view=views.LibraryListView.as_view(),
@@ -24,5 +25,11 @@ urlpatterns = [
         view=views.LibraryDetailView.as_view(),
         name='detail'
     ),
-    
 ]
+'''
+    path(
+        route='',
+        view=views.AuthorListView.as_view(),
+        name='author_list'
+    ),
+    '''
