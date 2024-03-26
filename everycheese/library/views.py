@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 
 from django.views.generic import CreateView
@@ -10,7 +11,7 @@ class LibraryListView(ListView):
 class LibraryDetailView(DetailView):
     model = Library
 
-class LibraryCreateView(CreateView):
+class LibraryCreateView(LoginRequiredMixin, CreateView):
     model = Library
     fields = [
         'book_name',
