@@ -36,9 +36,32 @@ class Cheese(TimeStampedModel):
 
     def __str__(self):
         return self.name
-    
+        
     def get_absolute_url(self):
         """Return absolute URL to the Cheese Detail page.""" 
         return reverse(
             'cheeses:detail', kwargs={"slug": self.slug} 
         )
+
+''' 
+class Library(TimeStampedModel):
+    class Author(models.Model):
+        first_name = models.CharField(max_length=30)
+        last_name = models.CharField(max_length=30)
+        #book = models.ForeignKey(Book, on_delete=models.CASCADE)
+
+        def __str__(self):
+            return f"{self.first_name} {self.last_name}"
+
+    class Book(models.Model):
+        book_name = models.CharField(max_length=100)
+        book_genre = models.CharField(max_length=30)
+        pub_date = models.DateField()
+        author = models.ForeignKey(Author, on_delete=models.CASCADE)
+
+        def __str__(self):
+            return self.book_name
+        
+        class Meta:
+            ordering = ["book_name"]
+'''

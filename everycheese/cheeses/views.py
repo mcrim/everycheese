@@ -36,3 +36,18 @@ class CheeseUpdateView(LoginRequiredMixin, UpdateView):
         'country_of_origin'
     ]
     action = "Update"
+
+class BookListView(ListView):
+    model = Cheese
+    fields = [
+        'book_name',
+        'book_genre',
+        'pub_date'
+    ]
+
+class AuthorListView(ListView):
+    model = Cheese
+    fields = [
+        'first_name',
+        'last_name'
+    ]

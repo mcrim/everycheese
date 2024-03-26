@@ -26,6 +26,16 @@ urlpatterns = [
         view=views.CheeseDetailView.as_view(),
         name='detail'
     ),
+    path(
+        route='',
+        view=views.BookListView.as_view(),
+        name='list'
+    ),
+    path(
+        route='authors',
+        view=views.AuthorListView.as_view(),
+        name='author_list'
+    ),
     
 ]
 
